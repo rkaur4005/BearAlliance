@@ -1,0 +1,74 @@
+
+      <nav class="navbar navbar-light" style="background-color: #563d7c">
+          <a class="navbar-brand" href="#">
+              <img src="https://ph-files.imgix.net/516f1efd-ac50-4c05-82f7-7336830265ad?auto=format" width="70" height="60" alt="">
+            </a>
+      <a class="navbar-brand" href="#">Star Wars API </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+  <div class="card" style="padding-left:10%; padding-top:5%;">
+      <div class="row">
+          <div class="col-4">
+              <div class="card border-dark mb-3" style="max-width: 18rem;" *ngFor="let charcter of characters">
+                  <div class="card-header">{{charcter.name}}</div>
+                  <div class="card-body text-dark">
+                    <!-- <h5 class="card-title">{{charcter.url}}</h5> -->
+                    <button type="button" class="btn btn-outline-dark" (click)="slectFilm(charcter.url)">View details</button>
+                  </div>
+                </div>
+          </div>
+          <div class="col-7" style="">
+               <div class="card" *ngIf="showFilm" >
+          <div class="card-header">
+            {{getFilmData.name}}
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>Gender: {{getFilmData.gender}}</p>
+              <p>Hair Color: {{getFilmData.hair_color}}</p>
+              <p>Height: {{getFilmData.height}}</p>
+              <p>Eye Color: {{getFilmData.eye_color}}</p>
+              <p>Skin Color: {{getFilmData.skin_color}}</p>
+              <p>Mass: {{getFilmData.mass}}</p>
+              <p>DOB: {{getFilmData.birth_year}}</p>
+              <p>Created: {{getFilmData.created | date }}</p>
+              <p>Edited: {{getFilmData.edited | date }}</p>
+              <!-- <p>Films: {{getFilmData.films}}</p> -->
+               <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+           </div>
+          <div class="col-1">
+        </div>
+        </div>
+
+
+
+</div>
+
+<div class="card">
+    <div class="card-body" style="text-align: -webkit-center;">
+    <span >
+       Copyrights 2019. All Rights are Reserved by @
+      </span>  
+       </div>
+  </div>
+
+  <ngx-spinner bdColor="rgba(0, 123, 255, 0)" size="default" color="#563d7c" type="ball-elastic-dots"></ngx-spinner>
